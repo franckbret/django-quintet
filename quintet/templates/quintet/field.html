@@ -1,0 +1,18 @@
+{% if field.is_hidden %}
+    {{ field }}
+{% else %}
+    {% if field.label %}
+    <label for="{{ field.auto_id }}" class="{% if field.field.widget.attrs.class %} {{ field.field.widget.attrs.class }}{% endif %}">
+        {{ field.label|safe }} : {% if field.field.required %}<em class="required">*</em>{% endif %}
+    </label>
+    {% endif %}
+    {{ field }}    
+    <div class="formtip {% if field.errors %}error{% else %}notice{% endif %}">
+        {% comment %}{% if field.label %}<strong>{{ field.label }}</strong><br />{% endif %}{% endcomment %}
+        {% if field.field.widget.attrs.title %}<strong>{{ field.field.widget.attrs.title }}</strong><br />{% endif %}
+        {% if field.field.widget.attrs.placeholder %}<em>{{ field.field.widget.attrs.placeholder }}</em>{% endif %}
+        {% if field.errors %}
+        {% for error in field.errors %}<p class="error"><strong>{{ error|safe }}</strong></p>{% endfor %}
+        {% endif %}
+    </div>
+{% endif %}

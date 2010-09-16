@@ -1,0 +1,6 @@
+Note that this application requires Python 2.5 or later, and Django
+1.2 or later. You can obtain Python from http://www.python.org/ and
+Django from http://www.djangoproject.com/.
+
+You can easily install master branch with pip in a virtualenv :
+pip install -e git+git@github.com:franckbret/django-quintet.git#egg=django-quintet
