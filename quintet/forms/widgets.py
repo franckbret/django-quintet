@@ -8,6 +8,26 @@ class QuintetInput(Input):
     
 class TextInput(QuintetInput):
     input_type = 'text'
+    
+class SearchInput(QuintetInput):
+    input_type = 'search'
 
 class EmailInput(QuintetInput):
     input_type = 'email'
+    
+class UrlInput(QuintetInput):
+    input_type = 'url'
+    
+class NumberInput(QuintetInput):
+    input_type = 'number'
+    
+class RangeInput(QuintetInput):
+    input_type = 'range'
+    
+class TelephoneInput(QuintetInput):
+    input_type = 'telephone'
+    
+
+    
+
+    
